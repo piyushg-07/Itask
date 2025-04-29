@@ -8,9 +8,11 @@ mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    dbName: 'digital_diner', // Replace with your actual DB name
   })
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.error('MongoDB connection error:', err));
+
 
 // PostgreSQL connection
 const pool = new Pool({

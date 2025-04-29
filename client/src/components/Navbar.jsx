@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
@@ -9,32 +8,32 @@ export default function Navbar() {
   const itemCount = cart.reduce((sum, i) => sum + i.qty, 0);
 
   return (
-    <nav className="bg-white shadow-md">
-      <div className="container mx-auto px-6 py-3 flex justify-between items-center">
+    <nav className="bg-gray-50 shadow-sm border-b border-gray-200">
+      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link
           to="/"
-          className="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition-colors"
+          className="text-2xl font-bold text-indigo-700 hover:text-indigo-900 tracking-wide transition"
         >
           Digital Diner
         </Link>
 
-        {/* Links */}
-        <div className="flex items-center space-x-6">
+        {/* Navigation Links */}
+        <div className="flex items-center space-x-6 text-sm font-medium text-gray-700">
           <Link
             to="/"
-            className="text-gray-700 hover:text-indigo-600 transition-colors"
+            className="hover:text-indigo-600 transition"
           >
             Menu
           </Link>
 
           <Link
             to="/cart"
-            className="relative text-gray-700 hover:text-indigo-600 transition-colors"
+            className="relative hover:text-indigo-600 transition"
           >
             Cart
             {itemCount > 0 && (
-              <span className="absolute -top-2 -right-3 flex items-center justify-center h-5 w-5 text-xs bg-red-500 text-white rounded-full">
+              <span className="absolute -top-2 -right-3 h-5 w-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center shadow-sm">
                 {itemCount}
               </span>
             )}
@@ -42,7 +41,7 @@ export default function Navbar() {
 
           <Link
             to="/history"
-            className="text-gray-700 hover:text-indigo-600 transition-colors"
+            className="hover:text-indigo-600 transition"
           >
             History
           </Link>
@@ -50,7 +49,7 @@ export default function Navbar() {
           {location.pathname === '/admin' && (
             <Link
               to="/admin"
-              className="px-3 py-1 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+              className="px-3 py-1 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
             >
               Admin
             </Link>
