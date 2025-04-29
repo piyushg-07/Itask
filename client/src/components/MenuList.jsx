@@ -17,7 +17,8 @@ export default function MenuList() {
         const data = await fetchMenu();           // no arg: fetch all
         setAllItems(Array.isArray(data) ? data : []);
       } catch (e) {
-        setError(e.response?.data?.error || 'An error occurred');
+        console.log(e)
+        setError( 'An error occurred');
       } finally {
         setLoading(false);
       }

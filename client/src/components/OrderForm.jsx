@@ -41,7 +41,8 @@ export default function OrderForm() {
         state: { fromOrder: true, phone: form.phone_number }
       });
     } catch (e) {
-      setError(e.response?.data?.error || 'An error occurred');
+      console.log(e)
+      setError('An error occurred');
     }
   };
 
