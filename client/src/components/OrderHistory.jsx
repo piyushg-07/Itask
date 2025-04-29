@@ -17,7 +17,7 @@ export default function OrderHistory() {
       const data = await fetchOrders(phone);
       setOrders(data);
     } catch (e) {
-      setError(e.response?.data?.error || e.message);
+      setError(e.response?.data?.error || 'An error occurred');
     } finally {
       setLoading(false); // End loading
     }
