@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 export default function Navbar() {
   const cart = useCart();
-  const location = useLocation();
+  // const location = useLocation();
   const itemCount = cart.reduce((sum, i) => sum + i.qty, 0);
 
   return (
@@ -46,14 +46,14 @@ export default function Navbar() {
             History
           </Link>
 
-          {location.pathname === '/admin' && (
+          {/* {location.pathname === '/admin' && ( */}
             <Link
               to="/admin"
               className="px-3 py-1 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
             >
               Admin
             </Link>
-          )}
+          {/* // )} */}
         </div>
       </div>
     </nav>
